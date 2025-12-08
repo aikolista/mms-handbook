@@ -1,0 +1,375 @@
+/* Shopify OS-inspired styling */
+
+:root {
+  /* Green → White → Pink gradient palette */
+  --os-green: #008060;
+  --os-green-light: #00A87B;
+  --os-green-highlight: #E3F5EF;
+  --os-pink: #F890C2;
+  --os-pink-light: #FBB8D8;
+  --os-pink-highlight: #FFF0F7;
+  --os-gradient-subtle: linear-gradient(135deg, 
+    rgba(248, 144, 194, 0.04) 0%, 
+    rgba(255, 255, 255, 0.8) 50%, 
+    rgba(0, 128, 96, 0.04) 100%);
+  --os-text-primary: #000000;
+  --os-text-secondary: #616161;
+  --os-card-bg: #ffffff;
+  --os-border: #DCDCDC;
+}
+
+/* Apply Inter font with bright white background */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: #ffffff;
+  color: var(--os-text-primary);
+}
+
+/* Bright white frame */
+.Polaris-Frame {
+  background: #ffffff !important;
+}
+
+/* Main content area with full-width gradient */
+.Polaris-Frame__Content {
+  background: var(--os-gradient-subtle) !important;
+}
+
+.Polaris-Page {
+  background: transparent !important;
+}
+
+/* TopBar styling - gradient header across entire page */
+.Polaris-TopBar {
+  background: var(--os-gradient-subtle) !important;
+  border-bottom: 1px solid #F5F5F5 !important;
+  box-shadow: none !important;
+  height: 64px !important;
+}
+
+.Polaris-TopBar__Contents {
+  background: transparent !important;
+}
+
+.Polaris-TopBar__UserMenu {
+  margin-left: 0 !important;
+  padding-left: 24px !important;
+}
+
+/* Pure white navigation background with gradient */
+.Polaris-Navigation {
+  background: var(--os-gradient-subtle) !important;
+  padding-top: 40px !important;
+}
+
+.Polaris-Frame__Navigation {
+  background: var(--os-gradient-subtle) !important;
+  border-right: 1px solid var(--os-border) !important;
+  padding-top: 40px !important;
+}
+
+/* Force navigation background to stay with gradient on hover */
+.Polaris-Navigation:hover,
+.Polaris-Frame__Navigation:hover {
+  background: var(--os-gradient-subtle) !important;
+}
+
+/* Prevent any parent container from changing background */
+.Polaris-Frame__Navigation *:hover {
+  background-color: transparent;
+}
+
+/* Clean cards with bright white background */
+.Polaris-Card {
+  background: #ffffff !important;
+  border-radius: 12px !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  transition: all 0.2s ease;
+  border: 1px solid var(--os-border) !important;
+}
+
+.Polaris-Card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06) !important;
+  transform: translateY(-1px);
+}
+
+/* Green highlight badges */
+.Polaris-Badge--toneSuccess {
+  background: var(--os-green-highlight) !important;
+  color: #004C3F !important;
+  border: 1px solid #B5E3D8 !important;
+  font-weight: 600;
+}
+
+.Polaris-Badge--toneInfo {
+  background: var(--os-pink-highlight) !important;
+  color: #C7175E !important;
+  border: 1px solid var(--os-pink-light) !important;
+  font-weight: 600;
+}
+
+/* Clean navigation with green → pink gradient on hover */
+.Polaris-Navigation__Item {
+  border-radius: 0;
+  margin: 2px 8px;
+  transition: all 0.2s ease;
+  background: transparent !important;
+  border-left: 1px solid #F3F3F3;
+  padding-left: 12px;
+}
+
+/* Home button special styling - emerald color */
+.Polaris-Navigation__Section:first-of-type {
+  margin-bottom: 0;
+}
+
+.Polaris-Navigation__Section:first-of-type .Polaris-Navigation__Item {
+  border-left: none !important;
+  padding-left: 0 !important;
+  margin-bottom: 1px !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  background: transparent !important;
+}
+
+.Polaris-Navigation__Section:first-of-type .Polaris-Navigation__Item *,
+.Polaris-Navigation__Section:first-of-type .Polaris-Navigation__Item button,
+.Polaris-Navigation__Section:first-of-type .Polaris-Navigation__Item a {
+  background: transparent !important;
+}
+
+.Polaris-Navigation__Section:first-of-type .Polaris-Navigation__Item:hover,
+.Polaris-Navigation__Section:first-of-type .Polaris-Navigation__Item:hover *,
+.Polaris-Navigation__Section:first-of-type .Polaris-Navigation__Item:hover button,
+.Polaris-Navigation__Section:first-of-type .Polaris-Navigation__Item:hover a,
+.Polaris-Navigation__Section:first-of-type .Polaris-Navigation__Item-selected,
+.Polaris-Navigation__Section:first-of-type .Polaris-Navigation__Item-selected *,
+.Polaris-Navigation__Section:first-of-type .Polaris-Navigation__Item-selected button,
+.Polaris-Navigation__Section:first-of-type .Polaris-Navigation__Item-selected a {
+  background: transparent !important;
+}
+
+.Polaris-Navigation__Section:first-of-type .Polaris-Navigation__Item .Polaris-Navigation__Text {
+  color: rgb(16, 185, 129) !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  display: inline !important;
+  visibility: visible !important;
+  background: transparent !important;
+}
+
+.Polaris-Navigation__Item *,
+.Polaris-Navigation__Item *:hover,
+.Polaris-Navigation__Item *:focus,
+.Polaris-Navigation__Item *:active {
+  background: transparent !important;
+}
+
+.Polaris-Navigation__Item::before,
+.Polaris-Navigation__Item::after,
+.Polaris-Navigation__Item *::before,
+.Polaris-Navigation__Item *::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+}
+
+/* Force override all hover states - green left border */
+.Polaris-Navigation__Item:hover,
+.Polaris-Navigation__Item:hover button,
+.Polaris-Navigation__Item:hover a {
+  background: transparent !important;
+  border-left-color: var(--os-green);
+}
+
+.Polaris-Navigation__Item:focus,
+.Polaris-Navigation__Item:active,
+.Polaris-Navigation__Item-hovered {
+  background: transparent !important;
+  border-left-color: var(--os-green);
+}
+
+/* Target button wrapper specifically */
+.Polaris-Navigation__Item .Polaris-Navigation__ItemWrapper,
+.Polaris-Navigation__Item:hover .Polaris-Navigation__ItemWrapper,
+.Polaris-Navigation__Item button,
+.Polaris-Navigation__Item button:hover,
+.Polaris-Navigation__Item button:focus,
+.Polaris-Navigation__Item a,
+.Polaris-Navigation__Item a:hover,
+.Polaris-Navigation__Item a:focus {
+  background: transparent !important;
+}
+
+.Polaris-Navigation__Item:not(.Polaris-Navigation__Item-selected):hover {
+  background: transparent !important;
+  border-left-color: var(--os-green);
+}
+
+/* Override Polaris default hover state class if it exists */
+.Polaris-Navigation__Item--hover,
+.Polaris-Navigation__Item[data-polaris-hovering] {
+  background: transparent !important;
+  border-left-color: var(--os-green);
+}
+
+.Polaris-Navigation__Item-selected {
+  background: transparent !important;
+  border-left: 1px solid var(--os-green);
+}
+
+.Polaris-Navigation__Item-selected .Polaris-Navigation__Text {
+  color: var(--os-green) !important;
+  font-weight: 600;
+}
+
+/* Section headers with green Shopify color */
+.Polaris-Navigation__Section + .Polaris-Navigation__Section {
+  margin-top: 8px;
+}
+
+.Polaris-Navigation__Section--withTitle .Polaris-Navigation__Section-title,
+.Polaris-Navigation__Text.Polaris-Navigation__Text--subdued {
+  font-weight: 800 !important;
+  color: var(--os-green) !important;
+  font-size: 13px !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  padding: 8px 16px !important;
+  margin-bottom: 8px !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  margin-left: 8px !important;
+  margin-right: 8px !important;
+  display: block !important;
+}
+
+/* Green accent buttons */
+.Polaris-Button--primary {
+  background: var(--os-green) !important;
+  border: none !important;
+  font-weight: 600;
+}
+
+.Polaris-Button--primary:hover {
+  background: var(--os-green-light) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 128, 96, 0.2) !important;
+}
+
+.Polaris-Button--plain {
+  color: var(--os-green) !important;
+  font-weight: 600;
+}
+
+.Polaris-Button--plain:hover {
+  color: var(--os-green-light) !important;
+  background: var(--os-green-highlight) !important;
+}
+
+/* Clean banners */
+.Polaris-Banner--toneSuccess {
+  background: var(--os-green-highlight) !important;
+  border-left: 3px solid var(--os-green) !important;
+  border-radius: 8px !important;
+}
+
+.Polaris-Banner--toneInfo {
+  background: var(--os-pink-highlight) !important;
+  border-left: 3px solid var(--os-pink) !important;
+  border-radius: 8px !important;
+}
+
+.Polaris-Banner--toneWarning {
+  background: #FFF5EA !important;
+  border-left: 3px solid #B98900 !important;
+  border-radius: 8px !important;
+}
+
+/* Tabs with green → pink gradient */
+.Polaris-Tabs__Tab--selected {
+  background: linear-gradient(135deg, 
+    rgba(0, 128, 96, 0.88) 0%, 
+    rgba(255, 255, 255, 0.3) 50%, 
+    rgba(248, 144, 194, 0.88) 100%) !important;
+  color: white !important;
+  border-radius: 8px 8px 0 0 !important;
+  font-weight: 600 !important;
+}
+
+.Polaris-Tabs__Tab {
+  transition: all 0.2s ease;
+  border-radius: 8px 8px 0 0 !important;
+  font-weight: 500;
+}
+
+.Polaris-Tabs__Tab:hover:not(.Polaris-Tabs__Tab--selected) {
+  background: linear-gradient(135deg, 
+    rgba(0, 128, 96, 0.06) 0%, 
+    rgba(248, 144, 194, 0.05) 100%) !important;
+}
+
+/* Page with bright white background and subtle gradient overlay */
+.Polaris-Page {
+  animation: fadeIn 0.3s ease;
+  background: var(--os-gradient-subtle);
+  min-height: 100vh;
+}
+
+/* Typography with Inter font */
+.Polaris-Text--headingLg {
+  font-weight: 700;
+  color: var(--os-text-primary);
+  letter-spacing: -0.01em;
+}
+
+.Polaris-Text--headingMd {
+  font-weight: 600;
+  color: var(--os-text-primary);
+}
+
+.Polaris-Text--bodyLg {
+  line-height: 1.6;
+  color: var(--os-text-primary);
+}
+
+/* Smooth animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Green links */
+a {
+  color: var(--os-green);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--os-green-light) !important;
+  text-decoration: underline;
+}
+
+/* Clean dividers */
+.Polaris-Divider {
+  background: var(--os-border);
+  height: 1px;
+  border: none;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .Polaris-Card {
+    border-radius: 8px !important;
+  }
+}
+

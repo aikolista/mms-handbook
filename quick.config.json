@@ -1,0 +1,16 @@
+{
+  "name": "mms-csm-handbook",
+  "displayName": "MMS Customer Success Handbook",
+  "description": "Comprehensive resource hub for the MMS Customer Success team",
+  "version": "1.0.0",
+  "appType": "web",
+  "framework": "react",
+  "permissions": [],
+  "routes": {
+    "main": "/"
+  },
+  "healthCheck": {
+    "path": "/health"
+  }
+}
+
