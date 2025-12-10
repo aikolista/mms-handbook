@@ -33,6 +33,7 @@ body {
 /* Main content area with full-width gradient */
 .Polaris-Frame__Content {
   background: var(--os-gradient-subtle) !important;
+  padding-bottom: 60px !important;
 }
 
 .Polaris-Page {

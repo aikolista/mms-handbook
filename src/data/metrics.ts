@@ -11,59 +11,59 @@ export const corePerformanceMetrics: Metric[] = [
   // Engagement
   {
     id: 'unique-meetings-l90',
-    name: '60% of Unique Merchant Meetings L90',
-    description: 'At least 60% of your merchants should have had a meeting in the last 90 days. Focus on High Engagement merchants with quarterly sync as default; monthly/bi-monthly only when business case justified.',
+    name: 'Unique Merchant Meetings L90',
+    description: 'The percentage of unique merchants that should have had a meeting in the last 90 days. Focus on High Engagement merchants with quarterly sync as default; monthly/bi-monthly only when business case justified.',
     target: '≥ 60%',
     calculation: '(Merchants with meetings L90 / Total merchants) × 100',
   },
   {
     id: 'meetings-per-week',
-    name: 'Average 15 Meetings Per Week',
-    description: 'Maintain an average of minimum 15 merchant meetings per week',
+    name: 'Meetings Per Week',
+    description: 'The average number of merchant meetings per week',
     target: '≥ 15/week',
     calculation: 'Total merchant meetings / Number of weeks',
   },
   {
     id: 'merchants-engaged-l90',
-    name: '100% of Merchants Engaged L90',
-    description: 'All merchants should be engaged (email, call, or meeting) within 90 days. If merchant never responded to email or no meeting in L90, must have attempted a Call.',
+    name: 'Merchants Engaged L90',
+    description: 'The percentage of merchants that should be engaged (email, call, or meeting) within 90 days. If merchant never responded to email or no meeting in L90, must have attempted a Call.',
     target: '100%',
   },
   {
     id: 'salesloft-recording',
-    name: '80% of Calls/Meetings Recorded',
-    description: 'Record merchant calls and meetings in Salesloft for coaching and insights',
+    name: 'Calls/Meetings Recorded',
+    description: 'The percentage of merchant calls and meetings in Salesloft for coaching and insights',
     target: '≥ 80%',
   },
   // Data Quality
   {
     id: 'risk-profile',
-    name: '100% Completed Risk Profiles',
-    description: 'All merchants must have a completed Risk Profile',
+    name: 'Completed Risk Profiles',
+    description: 'The percentage of merchants that have a completed Risk Profile',
     target: '100%',
   },
   {
     id: 'merchant-overview',
-    name: '100% Completed Merchant Overview',
-    description: 'All merchants must have a completed Merchant Overview (Account Plan)',
+    name: 'Completed Merchant Overview',
+    description: 'The percentage of merchants that have a completed Merchant Overview (Account Plan)',
     target: '100%',
   },
   {
     id: 'success-plans',
-    name: '30% with Live Success Plans',
-    description: 'Success Plans track important milestones that help merchants grow. Focus on High Engagement merchants. Active plans should match plans updated in L90 with no overdue outcomes.',
+    name: 'Live Success Plans',
+    description: 'The percentage of merchants that have a Live Success Plan. Success Plans track important milestones that help merchants grow. Focus on High Engagement merchants. Active plans should match plans updated in L90 with no overdue outcomes.',
     target: '≥ 30%',
   },
   {
     id: 'primary-contact',
-    name: '100% with Primary Contact',
-    description: 'Every merchant must have a designated Primary Contact',
+    name: 'Primary Contact',
+    description: 'The percentage of merchants that have a Primary Contact listed in Salesforce.',
     target: '100%',
   },
   {
     id: 'key-decision-maker',
-    name: '100% with Key Decision Maker Contact',
-    description: 'Every merchant must have a Key Decision Maker or Executive/Senior Leader as a Contact',
+    name: 'Key Decision Maker Contact',
+    description: 'The percentage of merchants that have a Key Decision Maker or Executive/Senior Leader as a Contact.',
     target: '100%',
   },
 ];
@@ -74,31 +74,31 @@ export const revenueMetrics: Metric[] = [
     id: 'ipp-weekly',
     name: 'Weekly IPP Pipeline',
     description: 'Potential Incremental Product Profit pipeline per week',
-    target: '$136K',
+    target: '$TBD',
   },
   {
     id: 'ipp-weekly-d2c',
     name: 'Weekly D2C IPP Pipeline',
     description: 'D2C-specific potential IPP per week',
-    target: '$20K',
+    target: '$TBD',
   },
   {
     id: 'ipp-quarterly',
     name: 'Quarterly IPP Pipeline',
     description: 'Potential Incremental Product Profit pipeline per quarter',
-    target: '$1.5M',
+    target: '$TBD',
   },
   {
     id: 'ipp-quarterly-d2c',
     name: 'Quarterly D2C IPP Pipeline',
     description: 'D2C-specific potential IPP per quarter',
-    target: '$240K',
+    target: '$TBD',
   },
   {
     id: 'ipp-won-stretch',
     name: 'IPP Won Per Quarter (Stretch Goal)',
     description: 'D2C Cross-Sell stretch goal of $100K IPP Won per CSM per quarter for actual closed/won IPP. MSQLs remain important for assessment, but focus primarily on overall IPP pipeline (one team, one dream!).',
-    target: '$100K',
+    target: '$TBD',
   },
 ];
 
@@ -106,66 +106,58 @@ export const revenueMetrics: Metric[] = [
 export const developmentMetrics: Metric[] = [
   {
     id: 'seismic-completion',
-    name: '100% of Seismic Enablement Completed',
-    description: 'Stay up-to-date with all required Seismic courses and tracks to remain product experts',
+    name: 'Seismic Enablement Completed',
+    description: 'The percentage of Seismic courses and tracks that have been completed within the month they were assigned.',
     target: '100%',
     dashboardUrl: 'https://seismic.shopify.io',
   },
   {
     id: 'product-feedback',
-    name: 'Minimum 10 Product Feedback Submissions',
-    description: 'Submit product feedback from merchant engagements in Salesforce as soon as possible. Important measurement of MS driving product insights and influencing product roadmaps via One List initiative.',
+    name: 'Product Feedback Submissions',
+    description: 'Number of product feedback submissions in Salesforce. Important measurement of MS driving product insights and influencing product roadmaps via One List initiative.',
     target: '≥ 10/month',
-  },
-  {
-    id: 'gong-coaching',
-    name: 'Salesloft Coaching Calls',
-    description: 'MS Leads listen to, score, and provide coaching on recorded calls',
-    target: '2 calls/month',
+  
   },
   {
     id: 'merchant-stories',
     name: 'Merchant Story Submissions',
-    description: 'Submit merchant customer success stories via Slack workflow to celebrate wins and share impact',
+    description: 'Number of merchant stories submitted via Slack workflow to celebrate wins and share impact',
     target: '1 story/month',
   },
 ];
 
 // Dashboard and Resource Links
 export const metricsDashboards = [
+
   {
-    title: 'WDGLL Report',
-    url: 'https://tableau.shopify.io/wdgll',
-    description: 'Keep a pulse on engagement, growth, product adoption, and cross-sell metrics. Use WDGLL Dictionary on first page for definitions.',
+    title: '💰 NRR/IPP Hub',
+    url: 'https://lookerstudio.google.com/u/0/reporting/29bb002d-9fbf-4118-905f-9b137420047a/page/p_8cb59qnmud',
+    description: 'Deep dive into revenue breakdown of your merchants and top revenue drivers, and track individual IPP attainment per quarter for Closed Won opportunities',
   },
+  
   {
-    title: 'NRR Dashboard',
-    url: 'https://tableau.shopify.io/nrr',
-    description: 'Deep dive into revenue breakdown of your merchants and top revenue drivers',
-  },
-  {
-    title: 'IPP Dashboard',
-    url: 'https://tableau.shopify.io/ipp',
-    description: 'Track individual IPP attainment per quarter for Closed Won opportunities',
-  },
-  {
-    title: 'IPP Pipeline Dashboard',
-    url: 'https://tableau.shopify.io/ipp-pipeline',
+    title: '📈 IPP Pipeline Dashboard',
+    url: 'https://banff.lightning.force.com/lightning/r/Dashboard/01ZOG000002iclB2AQ/view?queryScope=userFolders',
     description: 'Track MSQLs and Closed Won opportunities against quarterly targets',
   },
   {
-    title: 'Post-Sales Dashboard',
-    url: 'https://tableau.shopify.io/post-sales',
+    title: '👥 Accounts Hub',
+    url: 'https://lookerstudio.google.com/u/0/reporting/29bb002d-9fbf-4118-905f-9b137420047a/page/p_pjlza0lmud',
     description: 'Track merchant launches, engagement, success plans, and data hygiene',
   },
   {
-    title: 'Mid-Market Scaled Tracker',
+    title: '🎯 Opportunities Hub',
+    url: 'https://lookerstudio.google.com/u/0/reporting/29bb002d-9fbf-4118-905f-9b137420047a/page/p_59h6e6lmud',
+    description: 'Track merchant launches, engagement, success plans, and data hygiene',
+  },
+  {
+    title: '📍 Mid-Market Scaled Tracker',
     url: 'https://docs.google.com/spreadsheets/[MMS-TRACKER]',
     description: 'Static tracker updated monthly - your compass for book prioritization',
   },
   {
-    title: 'Copilot for MS',
-    url: 'https://copilot.shopify.io',
+    title: '🧭 Copilot for MS',
+    url: 'https://revenue-funnel.shopify.io/copilot/accounts?accounts=Default&actions=Default&book=default&contacts=Default&shops=Default',
     description: 'Real-time account details, NRR growth, and IPP opportunities - your GPS',
   },
 ];

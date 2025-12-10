@@ -12,39 +12,60 @@ export default function CompensationCalculator() {
       return attainmentPercent;
     }
 
-    let totalPayout = 100; // Base 100%
+    const basePayout = 100;
+    const excessAttainment = attainmentPercent - 100;
+    let accelerator = 1;
 
-    // 100% to 125% at 2x
-    if (attainmentPercent > 100) {
-      const tier1 = Math.min(attainmentPercent - 100, 25);
-      totalPayout += tier1 * 2;
+    // Determine which tier the attainment falls into
+    // The accelerator applies to ALL excess above 100%, not marginal
+    if (attainmentPercent >= 200) {
+      accelerator = 3;
+    } else if (attainmentPercent >= 175) {
+      accelerator = 2.75;
+    } else if (attainmentPercent >= 150) {
+      accelerator = 2.5;
+    } else if (attainmentPercent >= 125) {
+      accelerator = 2.25;
+    } else if (attainmentPercent > 100) {
+      accelerator = 2;
     }
 
-    // 125% to 150% at 2.25x
-    if (attainmentPercent > 125) {
-      const tier2 = Math.min(attainmentPercent - 125, 25);
-      totalPayout += tier2 * 2.25;
+    return basePayout + (excessAttainment * accelerator);
+  };
+
+  const getDetailedBreakdown = (attainmentPercent: number): string[] => {
+    if (attainmentPercent <= 100) {
+      return [`${attainmentPercent}% attainment = ${attainmentPercent}% payout (1x)`];
     }
 
-    // 150% to 175% at 2.5x
-    if (attainmentPercent > 150) {
-      const tier3 = Math.min(attainmentPercent - 150, 25);
-      totalPayout += tier3 * 2.5;
+    const breakdown: string[] = [];
+    const excessAttainment = attainmentPercent - 100;
+    let accelerator = 1;
+    let tierName = '';
+
+    // Determine which tier
+    if (attainmentPercent >= 200) {
+      accelerator = 3;
+      tierName = '≥200%';
+    } else if (attainmentPercent >= 175) {
+      accelerator = 2.75;
+      tierName = '175-200%';
+    } else if (attainmentPercent >= 150) {
+      accelerator = 2.5;
+      tierName = '150-175%';
+    } else if (attainmentPercent >= 125) {
+      accelerator = 2.25;
+      tierName = '125-150%';
+    } else if (attainmentPercent > 100) {
+      accelerator = 2;
+      tierName = '100-125%';
     }
 
-    // 175% to 200% at 2.75x
-    if (attainmentPercent > 175) {
-      const tier4 = Math.min(attainmentPercent - 175, 25);
-      totalPayout += tier4 * 2.75;
-    }
+    breakdown.push('100% base = 100%');
+    breakdown.push(`${excessAttainment.toFixed(2)}% above 100% × ${accelerator}x (${tierName} tier) = ${(excessAttainment * accelerator).toFixed(2)}%`);
+    breakdown.push(`Total = ${(100 + excessAttainment * accelerator).toFixed(2)}%`);
 
-    // Above 200% at 3x
-    if (attainmentPercent > 200) {
-      const tier5 = attainmentPercent - 200;
-      totalPayout += tier5 * 3;
-    }
-
-    return totalPayout;
+    return breakdown;
   };
 
   const handleCalculate = () => {
@@ -120,7 +141,7 @@ export default function CompensationCalculator() {
           </Text>
           <Box paddingBlockStart="200">
             <Text as="p" variant="bodySm" tone="subdued">
-              Calculate your payout
+              Estimate your payout
             </Text>
           </Box>
         </Box>
@@ -157,7 +178,7 @@ export default function CompensationCalculator() {
                   {payout.toFixed(2)}%
                 </Text>
                 <Text as="p" variant="bodyLg" tone="success" fontWeight="semibold">
-                  Payout
+                  Total Payout
                 </Text>
               </InlineStack>
               
@@ -174,11 +195,18 @@ export default function CompensationCalculator() {
                 </Box>
               )}
               
-              {parseFloat(attainment) > 100 && (
-                <Box paddingBlockStart="200">
-                  <Text as="p" variant="bodySm" tone="subdued">
-                    Breakdown: 100% base + {(payout - 100).toFixed(2)}% accelerated earnings
-                  </Text>
+              {parseFloat(attainment) > 0 && (
+                <Box paddingBlockStart="300">
+                  <BlockStack gap="100">
+                    <Text as="p" variant="bodySm" fontWeight="semibold">
+                      📊 Calculation Breakdown:
+                    </Text>
+                    {getDetailedBreakdown(parseFloat(attainment)).map((line, index) => (
+                      <Text key={index} as="p" variant="bodySm" tone="subdued">
+                        {line}
+                      </Text>
+                    ))}
+                  </BlockStack>
                 </Box>
               )}
             </BlockStack>
@@ -192,25 +220,28 @@ export default function CompensationCalculator() {
         >
           <BlockStack gap="200">
             <Text as="p" variant="bodySm" fontWeight="semibold">
-              💡 How it works:
+              💡 How Accelerators Work:
             </Text>
             <Text as="p" variant="bodySm">
-              • Up to 100%: pays 1x (100%)
+              Your tier is based on total attainment, and the accelerator applies to ALL attainment above 100%:
             </Text>
             <Text as="p" variant="bodySm">
-              • 100-125%: marginal dollars pay 2x
+              • Up to 100%: 1x
             </Text>
             <Text as="p" variant="bodySm">
-              • 125-150%: marginal dollars pay 2.25x
+              • &gt;100 to &lt;125%: 2x on all dollars above 100%
             </Text>
             <Text as="p" variant="bodySm">
-              • 150-175%: marginal dollars pay 2.5x
+              • &gt;125 to &lt;150%: 2.25x on all dollars above 100%
             </Text>
             <Text as="p" variant="bodySm">
-              • 175-200%: marginal dollars pay 2.75x
+              • &gt;150 to &lt;175%: 2.5x on all dollars above 100%
             </Text>
             <Text as="p" variant="bodySm">
-              • Above 200%: marginal dollars pay 3x
+              • &gt;175 to &lt;200%: 2.75x on all dollars above 100%
+            </Text>
+            <Text as="p" variant="bodySm">
+              • &gt;200%: 3x on all dollars above 100%
             </Text>
           </BlockStack>
         </Box>

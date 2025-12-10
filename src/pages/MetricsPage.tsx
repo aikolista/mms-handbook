@@ -11,9 +11,11 @@ import {
   Divider,
   Badge,
   List,
+  InlineGrid,
 } from '@shopify/polaris';
 import { 
   metricCategories,
+  metricsDashboards,
 } from '../data/metrics';
 
 export default function MetricsPage() {
@@ -26,6 +28,67 @@ export default function MetricsPage() {
       <Layout>
         <Layout.Section>
           <BlockStack gap="500">
+            {/* Analytics Dashboards & Tools */}
+            <Card>
+              <BlockStack gap="400">
+                <Box>
+                  <Text as="h2" variant="headingLg">
+                    Analytics Dashboards & Tools
+                  </Text>
+                  <Text as="p" variant="bodyMd" tone="subdued">
+                    Essential tools and dashboards for tracking performance
+                  </Text>
+                </Box>
+                <Divider />
+                <InlineGrid columns={{ xs: 1, sm: 2, md: 3 }} gap="400">
+                  {metricsDashboards.map((dashboard, index) => (
+                    <a
+                      key={index}
+                      href={dashboard.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ textDecoration: 'none' }}
+                    >
+                      <div
+                        style={{
+                          cursor: 'pointer',
+                          transition: 'all 0.2s ease',
+                          border: '2px solid #E3F5EF',
+                          borderRadius: '12px',
+                          padding: '16px',
+                          backgroundColor: '#ffffff',
+                          height: '100%',
+                          display: 'flex',
+                          flexDirection: 'column',
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = 'translateY(-4px)';
+                          e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 128, 96, 0.15)';
+                          e.currentTarget.style.borderColor = '#008060';
+                          e.currentTarget.style.backgroundColor = '#F9FFFE';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = 'translateY(0)';
+                          e.currentTarget.style.boxShadow = 'none';
+                          e.currentTarget.style.borderColor = '#E3F5EF';
+                          e.currentTarget.style.backgroundColor = '#ffffff';
+                        }}
+                      >
+                        <BlockStack gap="200">
+                          <Text as="h3" variant="headingMd">
+                            {dashboard.title}
+                          </Text>
+                          <Text as="p" variant="bodyMd" tone="subdued">
+                            {dashboard.description}
+                          </Text>
+                        </BlockStack>
+                      </div>
+                    </a>
+                  ))}
+                </InlineGrid>
+              </BlockStack>
+            </Card>
+
             {metricCategories.map((category) => {
               const rows = category.metrics.map((metric) => [
                 <Box key={metric.id}>

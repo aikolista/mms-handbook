@@ -137,10 +137,10 @@ export default function TopBar() {
       zIndex: 100,
     }}>
       <img 
-        src="/cs-mms-logo.png" 
+        src="/logo2.png" 
         alt="CS MMS" 
         style={{
-          height: '64px',
+          height: '73px',
           width: 'auto',
         }}
       />

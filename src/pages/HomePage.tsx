@@ -127,17 +127,17 @@ export default function HomePage() {
                     </Text>
                     <Divider />
                     <BlockStack gap="200">
-                      <Button variant="plain" url="https://vault.shopify.io" external>
+                      <Button variant="plain" url="https://vault.shopify.io/teams/16865-CSM-MMS" external>
                         Vault Team Page
                       </Button>
-                      <Button variant="plain" url="https://tableau.shopify.io" external>
-                        Tableau Dashboards
+                      <Button variant="plain" url="https://banff.lightning.force.com/lightning/r/Dashboard/01ZOG000002iclB2AQ/view?queryScope=userFolders" external>
+                        Salesforce Pipeline Dashboard
                       </Button>
-                      <Button variant="plain" url="https://salesforce.shopify.io" external>
-                        Salesforce
+                      <Button variant="plain" url="https://revenue-funnel.shopify.io/copilot/accounts?accounts=accounts-default&actions=crosssellactions-default&book=default&contacts=acquisitioncontacts-default&shops=shops-default" external>
+                        Copilot
                       </Button>
-                      <Button variant="plain" url="https://shopify.enterprise.slack.com" external>
-                        Team Slack Channel
+                      <Button variant="plain" url="https://shopify.enterprise.slack.com/archives/C0856EWBSHY" external>
+                        #cs-na-midmarket-scaled
                       </Button>
                     </BlockStack>
                   </BlockStack>

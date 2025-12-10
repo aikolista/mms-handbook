@@ -17,6 +17,7 @@ import ProcessesPage from './pages/ProcessesPage';
 import ResourcesPage from './pages/ResourcesPage';
 import TeamDirectoryPage from './pages/TeamDirectoryPage';
 import MeetingsPage from './pages/MeetingsPage';
+import ProjectBoardPage from './pages/ProjectBoardPage';
 
 function AppContent() {
   const navigate = useNavigate();
@@ -56,6 +57,7 @@ function AppContent() {
         <Route path="/resources" element={<ResourcesPage />} />
         <Route path="/team-directory" element={<TeamDirectoryPage />} />
         <Route path="/meetings" element={<MeetingsPage />} />
+        <Route path="/project-board" element={<ProjectBoardPage />} />
       </Routes>
     </Frame>
     </div>
