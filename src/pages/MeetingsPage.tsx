@@ -35,32 +35,6 @@ export default function MeetingsPage() {
               </BlockStack>
             </Banner>
 
-            <Card>
-              <BlockStack gap="300">
-                <Text as="h2" variant="headingLg">
-                  Quick Reference
-                </Text>
-                <Divider />
-                <BlockStack gap="200">
-                  <Box>
-                    <Text as="p" variant="bodyMd">
-                      <strong>Weekly/Bi-Weekly:</strong> 1:1s, Team Meetings, Segment Meetings
-                    </Text>
-                  </Box>
-                  <Box>
-                    <Text as="p" variant="bodyMd">
-                      <strong>Monthly:</strong> Mid-Market Town Hall
-                    </Text>
-                  </Box>
-                  <Box>
-                    <Text as="p" variant="bodyMd">
-                      <strong>Meeting Tool:</strong> Fellow (for agendas, notes, and recordings via Google Meet)
-                    </Text>
-                  </Box>
-                </BlockStack>
-              </BlockStack>
-            </Card>
-
             {meetings.map((meeting) => (
               <Card key={meeting.id}>
                 <BlockStack gap="400">
@@ -185,7 +159,7 @@ export default function MeetingsPage() {
               </BlockStack>
             </Card>
 
-            <Banner tone="info">
+            <Banner tone="highlight">
               <BlockStack gap="200">
                 <Text as="p" variant="bodyMd" fontWeight="semibold">
                   💡 Pro Tip: Google Meet Recordings
@@ -196,6 +170,32 @@ export default function MeetingsPage() {
                 </Text>
               </BlockStack>
             </Banner>
+
+            <Card>
+              <BlockStack gap="300">
+                <Text as="h2" variant="headingLg">
+                  Quick Reference
+                </Text>
+                <Divider />
+                <BlockStack gap="200">
+                  <Box>
+                    <Text as="p" variant="bodyMd">
+                      <strong>Weekly/Bi-Weekly:</strong> 1:1s, Team Meetings, Segment Meetings
+                    </Text>
+                  </Box>
+                  <Box>
+                    <Text as="p" variant="bodyMd">
+                      <strong>Monthly:</strong> Mid-Market Town Hall
+                    </Text>
+                  </Box>
+                  <Box>
+                    <Text as="p" variant="bodyMd">
+                      <strong>Meeting Tool:</strong> Fellow (for agendas, notes, and recordings via Google Meet)
+                    </Text>
+                  </Box>
+                </BlockStack>
+              </BlockStack>
+            </Card>
           </BlockStack>
         </Layout.Section>
       </Layout>

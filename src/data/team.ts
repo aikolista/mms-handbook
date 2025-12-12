@@ -199,8 +199,31 @@ export const teamMembers: TeamMember[] = [
         manager: 'Arnaud Bonnet',
         vaultUrl: 'https://vault.shopify.io/users/9613-Vik-Klein',
       },
-     {
+      {
         id: '19',
+        name: 'Rebecca Hill',
+        role: 'Senior Customer Success Manager',
+        email: 'rebecca.hill@shopify.com',
+        slackHandle: '@rebecca.hill',
+        avatarUrl: 'https://cdn.shopify.com/b/u2-files-production-bucket/g27gq531g3q2z228p356t1u599zn.webp',
+        expertise: ['D2C', 'Fashion & Apparel', 'Plus to Enterprise'],
+        manager: 'Nikole Gabriel-Brooks',
+        vaultUrl: 'https://vault.shopify.io/users/29476-Rebecca-Hill',
+      },
+      {
+        id: '20',
+        name: 'Maddie Maiwurm',
+        role: 'Senior Customer Success Manager',
+        email: 'maddie.maiwurm@shopify.com',
+        slackHandle: '@maddie.maiwurm',
+        avatarUrl: 'https://cdn.shopify.com/b/u2-files-production-bucket/ea62pav7uyrugne1olbl6t4rbxuh.jpg',
+        expertise: ['D2C', 'Fashion & Apparel', 'Plus to Enterprise'],
+        manager: 'Nikole Gabriel-Brooks',
+        vaultUrl: 'https://vault.shopify.io/users/31500-Maddie-Maiwurm',
+      },
+  
+     {
+        id: '21',
         name: 'Arnaud Bonnet',
         role: 'Manager, Customer Success',
         email: 'arnaud.bonnet@shopify.com',
@@ -211,7 +234,7 @@ export const teamMembers: TeamMember[] = [
         vaultUrl: 'https://vault.shopify.io/users/11072-Arnaud-Bonnet',
       },
      {
-        id: '20',
+        id: '22',
         name: 'Nikole Gabriel-Brooks',
         role: 'Manager, Customer Success',
         email: 'nikole.gabriel-brooks@shopify.com',
@@ -222,7 +245,7 @@ export const teamMembers: TeamMember[] = [
         vaultUrl: 'https://vault.shopify.io/users/13188-Nikole-Gabriel-Brooks',
       },
      {
-        id: '21',
+        id: '23',
         name: 'Aiko Lista',
         role: 'Manager, Customer Success',
         email: 'aiko.lista@shopify.com',

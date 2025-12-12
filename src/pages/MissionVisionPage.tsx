@@ -98,6 +98,11 @@ export default function MissionVisionPage() {
                   How we stay aligned and share information as a team:
                 </Text>
                 <Divider />
+                <Banner tone="warning">
+                  <Text as="p" variant="bodyMd" fontWeight="semibold">
+                    Our #cs-na-midmarket-scaled Slack channel is our 'source of truth' for key announcements
+                  </Text>
+                </Banner>
                 <List type="bullet">
                   {communicationGuidelines.map((guideline, index) => (
                     <List.Item key={index}>{guideline}</List.Item>
@@ -105,10 +110,10 @@ export default function MissionVisionPage() {
                 </List>
                 <Box>
                   <Button 
-                    url="https://shopify.enterprise.slack.com/archives/C0856EWBSHY" 
+                    url="https://shopify.enterprise.slack.com/archives/C03QXQXQXQX" 
                     external
                   >
-                    Open #cs-na-midmarket-scaled
+                    Open #ms-na-midmarket-scaled
                   </Button>
                 </Box>
               </BlockStack>

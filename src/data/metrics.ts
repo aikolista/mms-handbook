@@ -130,33 +130,33 @@ export const developmentMetrics: Metric[] = [
 export const metricsDashboards = [
 
   {
-    title: '💰 NRR/IPP Hub',
+    title: 'NRR/IPP Hub',
     url: 'https://lookerstudio.google.com/u/0/reporting/29bb002d-9fbf-4118-905f-9b137420047a/page/p_8cb59qnmud',
     description: 'Deep dive into revenue breakdown of your merchants and top revenue drivers, and track individual IPP attainment per quarter for Closed Won opportunities',
   },
   
   {
-    title: '📈 IPP Pipeline Dashboard',
+    title: 'IPP Pipeline Dashboard',
     url: 'https://banff.lightning.force.com/lightning/r/Dashboard/01ZOG000002iclB2AQ/view?queryScope=userFolders',
     description: 'Track MSQLs and Closed Won opportunities against quarterly targets',
   },
   {
-    title: '👥 Accounts Hub',
+    title: 'Accounts Hub',
     url: 'https://lookerstudio.google.com/u/0/reporting/29bb002d-9fbf-4118-905f-9b137420047a/page/p_pjlza0lmud',
     description: 'Track merchant launches, engagement, success plans, and data hygiene',
   },
   {
-    title: '🎯 Opportunities Hub',
+    title: 'Opportunities Hub',
     url: 'https://lookerstudio.google.com/u/0/reporting/29bb002d-9fbf-4118-905f-9b137420047a/page/p_59h6e6lmud',
     description: 'Track merchant launches, engagement, success plans, and data hygiene',
   },
   {
-    title: '📍 Mid-Market Scaled Tracker',
+    title: 'Mid-Market Scaled Tracker',
     url: 'https://docs.google.com/spreadsheets/[MMS-TRACKER]',
     description: 'Static tracker updated monthly - your compass for book prioritization',
   },
   {
-    title: '🧭 Copilot for MS',
+    title: 'Copilot for MS',
     url: 'https://revenue-funnel.shopify.io/copilot/accounts?accounts=Default&actions=Default&book=default&contacts=Default&shops=Default',
     description: 'Real-time account details, NRR growth, and IPP opportunities - your GPS',
   },

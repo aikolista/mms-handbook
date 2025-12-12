@@ -43,11 +43,6 @@ export default function Navigation({ location, onNavigate }: NavigationProps) {
             selected: location === '/roles',
             onClick: () => onNavigate('/roles'),
           },
-          {
-            label: '👥 Team Directory',
-            selected: location === '/team-directory',
-            onClick: () => onNavigate('/team-directory'),
-          },
         ]}
       />
       <PolarisNavigation.Section
@@ -77,11 +72,6 @@ export default function Navigation({ location, onNavigate }: NavigationProps) {
             label: '📅 Meetings & Cadence',
             selected: location === '/meetings',
             onClick: () => onNavigate('/meetings'),
-          },
-          {
-            label: '📋 Project Board',
-            selected: location === '/project-board',
-            onClick: () => onNavigate('/project-board'),
           },
           {
             label: '📖 Processes & Playbooks',
