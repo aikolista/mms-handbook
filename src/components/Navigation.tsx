@@ -74,6 +74,11 @@ export default function Navigation({ location, onNavigate }: NavigationProps) {
             onClick: () => onNavigate('/meetings'),
           },
           {
+            label: '📋 Project Board',
+            selected: location === '/project-board',
+            onClick: () => onNavigate('/project-board'),
+          },
+          {
             label: '📖 Processes & Playbooks',
             selected: location === '/processes',
             onClick: () => onNavigate('/processes'),

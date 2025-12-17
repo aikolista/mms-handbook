@@ -7,6 +7,7 @@ export { default as ToolsPage } from './ToolsPage';
 export { default as PTOPage } from './PTOPage';
 export { default as ProcessesPage } from './ProcessesPage';
 export { default as ResourcesPage } from './ResourcesPage';
+export { default as ProjectBoardPage } from './ProjectBoardPage';
 export { default as FAQPage } from './FAQPage';
 
 

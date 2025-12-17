@@ -16,6 +16,7 @@ import PTOPage from './pages/PTOPage';
 import ProcessesPage from './pages/ProcessesPage';
 import ResourcesPage from './pages/ResourcesPage';
 import MeetingsPage from './pages/MeetingsPage';
+import ProjectBoardPage from './pages/ProjectBoardPage';
 
 function AppContent() {
   const navigate = useNavigate();
@@ -54,6 +55,7 @@ function AppContent() {
         <Route path="/processes" element={<ProcessesPage />} />
         <Route path="/resources" element={<ResourcesPage />} />
         <Route path="/meetings" element={<MeetingsPage />} />
+        <Route path="/project-board" element={<ProjectBoardPage />} />
       </Routes>
     </Frame>
     </div>
