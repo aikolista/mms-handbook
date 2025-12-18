@@ -53,6 +53,7 @@ export default function ProjectBoardPage() {
       const data = await response.json();
       
       if (data.success) {
+        console.log('Loaded tasks:', data.tasks);
         setTasks(data.tasks || []);
       } else {
         setError(data.error || 'Failed to load tasks');
@@ -65,11 +66,9 @@ export default function ProjectBoardPage() {
     }
   };
 
-  // Load tasks on mount and refresh every 30 seconds
+  // Load tasks on mount (no auto-refresh)
   useEffect(() => {
     loadTasks();
-    const interval = setInterval(loadTasks, 30000);
-    return () => clearInterval(interval);
   }, []);
 
   const assigneeOptions = teamMembers.map(member => ({
@@ -218,8 +217,9 @@ export default function ProjectBoardPage() {
   };
 
   const getAssigneeName = (assigneeId: string) => {
-    const member = teamMembers.find(m => m.id === assigneeId);
-    return member?.name || 'Unassigned';
+    if (!assigneeId) return 'Unassigned';
+    const member = teamMembers.find(m => m.id === assigneeId.toString());
+    return member?.name || `Unknown (ID: ${assigneeId})`;
   };
 
   const tasksByStatus = {
@@ -282,7 +282,7 @@ export default function ProjectBoardPage() {
         )}
         <Divider />
         <Text as="p" variant="bodySm" tone="subdued">
-          👤 {getAssigneeName(task.assigneeId)}
+          👤 {getAssigneeName(task.assigneeId || '')}
         </Text>
         <InlineStack gap="200" wrap>
           <button
@@ -450,8 +450,7 @@ export default function ProjectBoardPage() {
                   🌐 Shared Team Board
                 </Text>
                 <Text as="p" variant="bodyMd">
-                  This board is shared with your entire team! Tasks sync automatically every 30 seconds. 
-                  Click "Refresh" to manually sync, or add/edit tasks and they'll update for everyone.
+                  This board is shared with your entire team! Click "Refresh" to sync the latest changes.
                 </Text>
               </BlockStack>
             </Banner>
